@@ -59,7 +59,7 @@ if ! git diff-index --quiet HEAD --; then
 
         # Auto-commit with descriptive message
         git add -A
-        git commit -m "Auto-commit: Vorbereitung upstream Sync $(date +%Y-%m-%d %H:%M:%S)"
+        git commit -m "Auto-commit: Vorbereitung upstream Sync $(date +%Y-%m-%d\ %H:%M:%S)"
 
         echo "✓ Änderungen automatisch commited."
     else
