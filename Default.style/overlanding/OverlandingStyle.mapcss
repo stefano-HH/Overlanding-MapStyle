@@ -1,0 +1,67 @@
+@import "colors.mapcss";
+@image_noData: "noData.svg";
+@image_forbidden_area: "forbidden_area.svg";
+@image_wood: "wood.svg";
+@image_wood_broadleaved: "wood_broadleaved.svg";
+@image_wood_needleleaved: "wood_needleleaved.svg";
+@image_wood_mixed: "wood_mixed.svg";
+@image_wood_leafless: "wood_leafless.svg";
+@image_garden: "garden.svg";
+@image_scrub: "scrub.svg";
+@image_vineyard: "vineyard.svg";
+@image_orchard: "orchard.svg";
+@image_plant_nursery: "plant_nursery.svg";
+@image_allotments: "allotments.svg";
+@image_quarry: "quarry.svg";
+@image_dog_park: "dog_park.svg";
+@intermittent_water: "intermittent_water.svg";
+@image_wetland: "wetland.svg";
+@image_national_park_area: "national_park_area.svg";
+@image_cliff: "cliff2.svg";
+
+
+
+// canvas color
+canvas
+{
+    fill-color: @color_ground;
+    fill-image: @image_noData;
+}
+
+// for any object with tag 'layer', set it's property 'layer', to value of 'layer' tag
+*|z9-[layer]
+{
+    layer: eval(tag(layer));
+}
+
+area {
+@if DownloadedMaps
+    |z3-5(@DownloadedMaps) {
+        fill-color: @color_downloaded_map;
+    }
+@endif
+}
+
+@import "polygons.mapcss";
+@import "lines.mapcss";
+
+@import "if-bar.mapcss";
+@import "if-beauty.mapcss";
+@import "if-buildingname.mapcss";
+@import "if-cityservice.mapcss";
+@import "if-culture.mapcss";
+@import "if-education.mapcss";
+@import "if-entertainment.mapcss";
+@import "if-financial.mapcss";
+@import "if-food.mapcss";
+@import "if-hotel.mapcss";
+@import "if-medical.mapcss";
+@import "if-postal.mapcss";
+@import "if-publictransport.mapcss";
+@import "if-railway.mapcss";
+@import "if-shop.mapcss";
+@import "if-sport.mapcss";
+
+@import "points.mapcss";
+
+@import "brands.mapcss";

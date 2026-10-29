@@ -1,10 +1,5 @@
 Hier ist eine vollständige, übersichtliche Dokumentation im Markdown-Format, zugeschnitten auf die Nutzung des **`master`**-Branches.
 
-Du kannst diesen Text direkt kopieren und als `WORKFLOW.md` oder `README.md` in die Wurzel deines Repositories legen.
-
-Markdown
-
-~~~~container
 # Git-Workflow: Custom MapStyle & Upstream Sync
 
 Diese Dokumentation beschreibt die Einrichtung und den Pflege-Workflow für diesen benutzerdefinierten Guru Maps Stil (`MapStyle`).
@@ -29,7 +24,7 @@ Falls das Repository auf einem neuen Rechner frisch aufgesetzt wird:
 ```bash
 git clone [https://github.com/DEIN-BENUTZERNAME/MapStyle.git](https://github.com/DEIN-BENUTZERNAME/MapStyle.git)
 cd MapStyle
-~~~~
+
 
 ### Schritt 2: Upstream-Remote (Original) verknüpfen
 
@@ -141,9 +136,3 @@ git push origin master
 
 -   **MapCSS-Struktur:** Eigene Farbschemata oder geänderte Zoom-Filter möglichst am Ende von Dateien bündeln oder in eigene Abschnitte strukturieren.
 
-```container
-
----
-
-Welche spezifischen MapCSS-Dateien oder Theme-Anpassungen möchtest du in deinem `master`-Branch als Nächstes angehen?
-```

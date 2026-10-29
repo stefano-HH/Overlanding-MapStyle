@@ -1,0 +1,222 @@
+@if Shop
+|z13-{
+    [shop=supermarket],
+    [building=supermarket],
+    [amenity=marketplace],
+    [shop=sports],
+    [shop=convenience] {
+        [name=Lidl],
+        [name=LIDL] {
+            icon-image: "overlanding/brands/logo_lidl.svg";
+            icon-scale: @icon_small;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            [selected] {
+                text-color: blue;
+            }
+            |z17-{
+                icon-scale: @icon_large;
+            [selected] {
+                text-color: green;
+            }
+
+            }
+        }
+
+        [name=ALDI],
+        [name=ALDI Nord],
+        [name=Aldi],
+        [name=Aldi Nord],
+        [brand=ALDI Nord],
+        [brand:wikidata=Q41171373] {
+            icon-image: "overlanding/brands/logo_aldi.svg";
+            icon-scale: @icon_small;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=ALDI Süd],
+        [name=Aldi Süd],
+        [brand=ALDI Süd],
+        [brand:wikidata=Q41171672] {
+            icon-image: "overlanding/brands/logo_aldi-sued.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [brand=EDEKA],
+        [brand:wikidata=Q701755],
+        [name=Edeka],
+        [name=EDEKA] {
+            icon-image: "overlanding/brands/logo_edeka.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+
+        [name=Supeco] {
+            icon-image: "overlanding/brands/logo_supeco.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Continente],
+        [name=Continente Bom Dia],
+        [name=Continente Modelo] {
+            icon-image: "overlanding/brands/logo_continente.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Mercadona] {
+            icon-image: "overlanding/brands/logo_mercadona.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Pingo Doce],
+        [name=Pingo Doce Rebelva],
+        [name=Mercado Pingo Doce],
+        [name=Pingo Doce Carcavelos],
+        [name=Pingo Doce Sassoeiros] {
+            icon-image: "overlanding/brands/logo_pingo-doce.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Dia],
+        [name=DIA],
+        [name=DIA Market],
+        [name=Dia Market],
+        [name=Maxi Dia] {
+            icon-image: "overlanding/brands/logo_dia.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Marjane],
+        [name=marjane supermarket],
+        [name=Marjane Market],
+        [name:en=Marjane Market],
+        [name=Marjane مرجان] {
+            icon-image: "overlanding/brands/logo_marjane.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Intermarché],
+        [name=Intermarché Super],
+        [brand:wikidata=Q3153200] {
+            icon-image: "overlanding/brands/logo_intermarche.svg";
+            icon-scale: 4;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: 6;
+            }
+        }
+        [name=Carrefour],
+        [name=Carrefour Market],
+        [name=Carrefour كارفور],
+        [name=La cave Carrefour],
+        [name=Careffour BIER],
+        [name=Carefour BIER],
+        [name=Carrefour Drive],
+        [brand:wikidata=Q2689639] {
+            icon-image: "overlanding/brands/logo_carrefour.svg";
+            icon-scale: @icon_small;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: @icon_large;
+            }
+        }
+        [name=Decathlon],
+        [brand: wikidata=Q509349]
+        {
+            icon-image: "overlanding/brands/logo_decathlon.svg";
+            icon-scale: 4;
+            text-color: @color_label_text;
+            text: " ";
+            font-size: 9;
+            text-priority: 20;
+            |z17-{
+                icon-scale: 6;
+            }
+        }
+
+
+    }
+}
+@endif
+
+@if Food
+|z14-{
+[name="McDonald's"],
+[brand:wikidata=Q38076] {
+    icon-image: "overlanding/brands/logo_mcdonalds.svg";
+    icon-scale: @icon_small;
+//    text-color: @color_label_text;
+            text: " ";
+    font-size: 9;
+    text-priority: 20;
+    |z17-{
+        icon-scale: @icon_large;
+    }
+}
+}
+@endif
+
+
+
+
+
+
