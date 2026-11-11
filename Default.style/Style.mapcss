@@ -93,7 +93,7 @@ canvas
 // after the countries: named roads show their name, not a shield
 @import "regional/named-roads.mapcss";
 
-//@import "overlanding/Style.mapcss";
+@import "Style-Overlanding.mapcss";
 
 
 // requested data invisible in the default style

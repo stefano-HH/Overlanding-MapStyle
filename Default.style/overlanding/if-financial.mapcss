@@ -1,0 +1,26 @@
+
+
+@if Financial
+    |z15-{
+        [amenity=atm] {
+            icon-image: "poi_ATM.svg";
+            icon-scale: @icon_small;
+            icon-tint: @color_icon_financial;
+        }
+
+        [amenity=bank],
+            node|z18-[amenity=bureau_de_change] {
+            icon-image: "poi_bank.svg";
+            icon-scale: @icon_small;
+            icon-tint: @color_icon_financial;
+
+            text: eval(locTag('name'));
+            text-color: @color_icon_financial;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+@endif

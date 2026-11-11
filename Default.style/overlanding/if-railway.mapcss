@@ -1,0 +1,38 @@
+
+
+@if Railway
+    |z13-[railway=station],
+    |z14-[railway=halt],
+    |z16-[building=train_station] {
+        icon-image: "poi_circle_small.svg";
+        icon-tint:eval(any(tag('colour'), @color_icon_transport));
+        text-priority: 6;
+        |z14-{
+            icon-image: "poi_railway.svg";
+            [transport=subway],
+            [station=subway] {
+                icon-image: "poi_subway.svg";
+                text-priority: 7;
+            }
+        }
+        |z14-[railway=station][transport=subway],
+        |z14-[railway=station][station=subway],
+        |z15-[railway=station],
+        |z16-[railway=halt],
+        |z17-[building=train_station] {
+            text: eval(locTag('name'));
+            text-color: @color_text_transport;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+       }
+    }
+    node|z15-[railway=subway_entrance] {
+        icon-image: "poi_circle_small.svg";
+        icon-tint:eval(any(tag('colour'), @color_icon_transport));
+        details-enabled: 0;
+        text-priority: 5;
+    }
+
+@endif

@@ -1,0 +1,41 @@
+
+
+@if PublicTransport
+
+    // water transport
+    |z16-[amenity=ferry_terminal] {
+        icon-image: "poi_ferry.svg";
+        icon-tint: @color_icon_transport;
+        |z17-{
+            text: eval(locTag('name'));
+            text-color: @color_text_transport;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z16-[amenity=bus_station],
+    node|z16-[highway=bus_stop] {
+        icon-image: "poi_bus.svg";
+        icon-tint: @color_icon_transport;
+        text: eval(locTag('name'));
+        text-color: @color_text_transport;
+        [wikipedia],[website],[contact:website] {
+            text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+        }
+    }
+    node|z17-[railway=tram_stop] {
+        icon-image: "poi_tram.svg";
+        icon-tint: @color_icon_transport;
+        text: eval(locTag('name'));
+        text-color: @color_text_transport;
+        [wikipedia],[website],[contact:website] {
+            text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+        }
+    }
+
+@endif

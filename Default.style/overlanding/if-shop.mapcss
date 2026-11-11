@@ -1,0 +1,196 @@
+
+
+@if AllShops
+    // all kinds of shops
+    |z17-[shop]{
+        icon-image: "poi_circle.svg";
+        icon-tint: @color_icon_stores;
+        text: eval(locTag('name'));
+        text-color: @color_text_stores;
+        text-priority:-1;
+        [wikipedia],[website],[contact:website] {
+            text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+        }
+    }
+@endif
+
+@if Shop
+|z16-{
+    [shop=supermarket] {
+        icon-image: "poi_supermarket.svg";
+        icon-tint: @color_icon_stores;
+        icon-scale: @icon_small;
+        |z17-{
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+    [shop=doityourself]{
+        icon-image: "poi_doityourself.svg";
+        icon-tint: @color_icon_stores;
+        icon-scale: @icon_small;
+        |z17-{
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+}
+    // small shops
+    |z17-{
+        [shop=alcohol],
+        [shop=beverages] {
+            icon-image: "poi_beverages.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=convenience] {
+            icon-image: "poi_store.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=butcher]{
+            icon-image: "poi_butcher.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=bakery]{
+            icon-image: "poi_bakery.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [amenity=marketplace] {
+            icon-image: "poi_market.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=mall],
+        [shop=shoes],
+        [shop=department_store],
+        [shop=boutique] {
+            icon-image: "poi_mall.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=clothes] {
+            icon-image: "poi_clothing_store.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=baby_goods] {
+            icon-image: "poi_baby_goods.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+        }
+        [shop=jewellery],
+        [shop=jewelry] {
+            icon-image: "poi_jewellery.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=florist],
+        [shop=garden_centre] {
+            icon-image: "poi_florist.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=bathroom_furnishing],
+        [shop=garden_furniture],
+        [shop=bed],
+        [shop=furniture] {
+            icon-image: "poi_furniture.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=books] {
+            icon-image: "poi_book.svg";
+            icon-tint: @color_icon_stores;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        [shop=mobile_phone] {
+            icon-image: "poi_mobile_phone.svg";
+            icon-tint: @color_icon_stores;
+            icon-scale: @icon_small;
+            text: eval(locTag('name'));
+            text-color: @color_text_stores;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+    |z18-[shop=kiosk]{
+        icon-image: "poi_market.svg";
+        icon-tint: @color_icon_stores;
+        text: eval(locTag('name'));
+        text-color: @color_text_stores;
+        [wikipedia],[website],[contact:website] {
+            text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+        }
+    }
+@endif

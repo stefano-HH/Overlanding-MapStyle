@@ -1,0 +1,77 @@
+
+
+@if Sport
+
+    |z15-[leisure=golf_course] {
+        icon-image: "poi_golf_course.svg";
+        icon-tint: @color_icon_activity;
+        |z16-{
+            text: eval(locTag('name'));
+            text-color: @color_text_activity;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z17-{
+        [leisure=marina] {
+            icon-tint: @color_icon_activity;
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_activity;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+        [leisure=playground] {
+            icon-image: "poi_playground.svg";
+            icon-tint: @color_icon_tint;
+            details-enabled: 0;
+            text-priority: -1; // under kindergarten
+        }
+
+        [leisure=sports_centre],
+        [leisure=fitness_centre] {
+            icon-image: "poi_gym.svg";
+            icon-tint: @color_icon_activity;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_activity;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+        [leisure=pitch],
+        [leisure=track] {
+            text: eval(locTag('name'));
+            text-color: @color_text_activity;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z20-{
+        [amenity=swimming_pool],
+        [leisure=swimming_pool] {
+            icon-image: "poi_pool.svg";
+            icon-tint: @color_icon_activity;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_activity;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
+
+@endif

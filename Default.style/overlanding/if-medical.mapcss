@@ -1,0 +1,68 @@
+
+
+@if Medical
+    |z13-{
+        [amenity=hospital],
+        [building=hospital],
+        [amenity=clinic],
+        [amenity=doctors] {
+            icon-image: "poi_health.svg";
+            icon-tint: @color_icon_health;
+            icon-scale: @icon_small;
+            text-priority: 10;
+            
+        }
+        [amenity=veterinary] {
+            icon-image: "poi_vet.svg";
+            icon-tint: @color_icon_health;
+            icon-scale: @icon_small;
+            text-priority: 10;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_health;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+        [amenity=pharmacy] {
+            icon-image: "poi_pharmacy.svg";
+            icon-tint: @color_icon_health;
+            text-priority: 10;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_health;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+        [amenity=dentist] {
+            icon-image: "poi_dentist.svg";
+            icon-tint: @color_icon_health;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_health;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
+    |z15-{
+        
+        [healthcare=laboratory] {
+            icon-image:"poi_laboratory.svg";
+            icon-tint: @color_icon_health;
+            text: eval(locTag('name'));
+            text-color: @color_text_health;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+@endif

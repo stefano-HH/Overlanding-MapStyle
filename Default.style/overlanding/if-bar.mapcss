@@ -1,0 +1,35 @@
+
+
+@if Bar
+
+|z15- {
+    [amenity=bar] {
+        icon-image: "poi_bar.svg";
+        icon-tint: @color_icon_food;
+
+        |z17- {
+            text: eval(locTag('name'));
+            text-color: @color_text_food;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    [amenity=pub] {
+        icon-image: "poi_pub.svg";
+        icon-tint: @color_icon_food;
+
+        |z17- {
+            text: eval(locTag('name'));
+            text-color: @color_text_food;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+}
+
+@endif

@@ -1,0 +1,39 @@
+
+
+@if Postal
+    |z17-{
+        [amenity=post_office] {
+            icon-image:"poi_post_office.svg";
+            icon-tint: @color_icon_offices;
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_offices;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=parcel_locker] {
+            icon-image:"poi_parcel_locker.svg";
+            icon-tint: @color_icon_offices;
+            |z18-{
+                text: eval(any(tag('brand'), tag('operator')));
+                [operator][ref] {
+                    text: eval(tag('operator') . ' ' . tag('ref'));
+                    [wikipedia],[website],[contact:website] {
+                            text: eval(tag('operator') . ' ' . tag('ref') . "⬈");
+                        }
+                }
+                [brand][ref] {
+                    text: eval(tag('brand') . ' ' . tag('ref'));
+                    [wikipedia],[website],[contact:website] {
+                            text: eval(tag('brand') . ' ' . tag('ref') . "⬈");
+                        }
+                }
+                text-color: @color_text_offices;
+            }
+        }
+    }
+    @endif

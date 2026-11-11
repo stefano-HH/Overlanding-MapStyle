@@ -1,0 +1,51 @@
+
+
+@if CityService
+    |z16- {
+        [office=government] {
+            icon-image: "poi_government.svg";
+            icon-tint: @color_icon_offices;
+
+            |z17- {
+                text: eval(locTag('name'));
+                text-color: @color_text_offices;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
+
+    |z17- {
+        [office=diplomatic] ([diplomatic=embassy],
+            [diplomatic=consulate]) {
+            icon-image: "poi_embassy.svg";
+            icon-tint: @color_icon_offices;
+
+            |z18- {
+                text: eval(locTag('name'));
+                text-color: @color_text_offices;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=police] {
+            icon-image: "poi_police_station.svg";
+            icon-tint: @color_icon_offices;
+
+            |z18- {
+                text: eval(locTag('name'));
+                text-color: @color_text_offices;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
+
+@endif

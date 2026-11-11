@@ -1,0 +1,61 @@
+
+
+@if Education
+    |z15-[amenity=university] {
+        icon-image: "poi_education.svg";
+        icon-tint: @color_icon_offices;
+        icon-scale: @icon_x_small;
+        |z18- {
+            text: eval(locTag('name'));
+            text-color: @color_text_offices;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z16-(
+        [amenity=college],
+        [amenity=school],
+        area[building=school]
+    ) {
+        icon-image: "poi_education.svg";
+        icon-tint: @color_icon_offices;
+        icon-scale: @icon_x_small;
+        |z18-{
+            text: eval(locTag('name'));
+            text-color: @color_text_offices;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+        }
+
+        |z16-[amenity=kindergarten] {
+            icon-image: "poi_baby_goods.svg";
+            icon-tint: @color_icon_offices;
+            icon-scale: @icon_x_small;
+            |z18- {
+                text: eval(locTag('name'));
+                text-color: @color_text_offices;
+                [wikipedia],[website],[contact:website] {
+                    text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        |z17-[amenity=library] {
+            icon-image: "poi_book.svg";
+            icon-tint: @color_icon_offices;
+            icon-scale: @icon_x_small;
+            text: eval(locTag('name'));
+            text-color: @color_text_offices;
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                    text: eval(locTag('name') . "⬈");
+            }
+        }
+@endif

@@ -1,0 +1,47 @@
+@if Theme == Dark
+    @import "overlanding/colors_dark.mapcss";
+
+    @image_cliff: "overlanding/cliff2_dark.svg";
+
+@else // Default colors
+    @import "overlanding/colors.mapcss";
+
+    @image_cliff: "overlanding/cliff2.svg";
+
+@endif
+
+
+
+
+@import "overlanding/polygons.mapcss";
+@import "overlanding/lines.mapcss";
+
+
+@import "overlanding/if-bar.mapcss";
+@import "overlanding/if-beauty.mapcss";
+@import "overlanding/if-buildingname.mapcss";
+@import "overlanding/if-cityservice.mapcss";
+@import "overlanding/if-culture.mapcss";
+@import "overlanding/if-education.mapcss";
+@import "overlanding/if-entertainment.mapcss";
+@import "overlanding/if-financial.mapcss";
+@import "overlanding/if-food.mapcss";
+@import "overlanding/if-hotel.mapcss";
+@import "overlanding/if-medical.mapcss";
+@import "overlanding/if-postal.mapcss";
+@import "overlanding/if-publictransport.mapcss";
+@import "overlanding/if-railway.mapcss";
+@import "overlanding/if-shop.mapcss";
+@import "overlanding/if-sport.mapcss";
+
+@import "overlanding/points.mapcss";
+
+@import "overlanding/brands.mapcss";
+
+
+// canvas color
+canvas
+{
+    fill-color: @color_ground;
+    fill-image: @image_noData;
+}

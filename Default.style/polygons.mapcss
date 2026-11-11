@@ -119,8 +119,8 @@ area {
 
     // all kinds of sands
     |z13-{
-        [natural=beach], 
-        [natural=sand], 
+        [natural=beach],
+        [natural=sand],
         [landuse=salt_pond] {
             z-index: -14;
             fill-color: @color_sand;
