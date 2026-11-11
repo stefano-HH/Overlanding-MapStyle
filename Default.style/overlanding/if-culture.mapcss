@@ -1,128 +1,135 @@
 
-
 @if Culture
+
     |z16-[tourism=museum] {
         icon-image: "poi_museum.svg";
         icon-tint: @color_icon_tourism;
+
         |z17-{
             text: eval(locTag('name'));
             text-color: @color_text_tourism;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
 
     |z16-(
-            [historic=memorial],
-            [historic=monument],
-            [artwork_type=sculpture],
-            [artwork_type=statue],
-            [artwork_type=installation],
-            [amenity=place_of_worship]
+        [historic=memorial],
+        [historic=monument],
+        [artwork_type=sculpture],
+        [artwork_type=statue],
+        [artwork_type=installation],
+        [amenity=place_of_worship]
     ) {
-            icon-image: "poi_monument.svg";
-            icon-tint: @color_icon_tourism;
-            |z17- {
-                text: eval(locTag('name'));
-                text-color: @color_text_tourism;
-                [wikipedia],[website],[contact:website] {
-                    text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
-                }
+        icon-image: "poi_monument.svg";
+        icon-tint: @color_icon_tourism;
+
+        |z17- {
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                text: eval(locTag('name') . "⬈");
             }
         }
+    }
 
-        |z16-[amenity=arts_centre] {
-            icon-image:"poi_arts_centre.svg";
-            icon-tint: @color_icon_tourism;
-            |z17-{
-                text: eval(locTag('name'));
-                text-color: @color_text_tourism;
-                [wikipedia],[website],[contact:website] {
-                    text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
-                }
+    |z16-[amenity=arts_centre] {
+        icon-image:"poi_arts_centre.svg";
+        icon-tint: @color_icon_tourism;
+
+        |z17-{
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                text: eval(locTag('name') . "⬈");
             }
         }
+    }
 
-        |z17-[amenity=community_centre] {
-            icon-image:"poi_community_centre.svg";
-            icon-tint: @color_icon_tourism;
+    |z17-[amenity=community_centre] {
+        icon-image:"poi_community_centre.svg";
+        icon-tint: @color_icon_tourism;
+        text: eval(locTag('name'));
+        text-color: @color_text_tourism;
+
+        [wikipedia],[website],[contact:website] {
+            text-color: @color_text_wikipedia;
+            text: eval(locTag('name') . "⬈");
+        }
+    }
+
+    |z17-[artwork_type=statue] {
+        icon-image:"poi_statue.svg";
+        icon-tint: @color_icon_tourism;
+
+        |z18- {
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z16-[amenity=place_of_worship] {
+        icon-image: "poi_worship.svg";
+        icon-tint: @color_icon_tourism;
+        [religion=christian] {
+            icon-image: "poi_worship_christian.svg";
+        }
+        [religion=muslim] {
+            icon-image: "poi_worship_muslim.svg";
+        }
+        [religion=buddhist] {
+            icon-image: "poi_worship_buddhist.svg";
+        }
+        [religion=shinto] {
+            icon-image: "poi_worship_shinto.svg";
+        }
+        [religion=jewish] {
+            icon-image: "poi_worship_jewish.svg";
+        }
+
+        |z17- {
             text: eval(locTag('name'));
             text-color: @color_text_tourism;
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
+    }
 
-        |z17-[artwork_type=statue] {
-            icon-image:"poi_statue.svg";
-            icon-tint: @color_icon_tourism;
-            |z18- {
-                text: eval(locTag('name'));
-                text-color: @color_text_tourism;
-                [wikipedia],[website],[contact:website] {
-                    text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
-                }
+    |z13-[historic=archaeological_site] {
+        icon-image:"poi_archaeological_site.svg";
+        icon-tint: @color_icon_tourism;
+
+        |z16- {
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+
+            [wikipedia],[website],[contact:website] {
+                text-color: @color_text_wikipedia;
+                text: eval(locTag('name') . "⬈");
             }
         }
+    }
 
-        |z16-[amenity=place_of_worship] {
-            icon-image: "poi_worship.svg";
-            icon-tint: @color_icon_tourism;
-
-            [religion=christian] {
-              icon-image: "poi_worship_christian.svg";
-            }
-
-            [religion=muslim] {
-              icon-image: "poi_worship_muslim.svg";
-            }
-
-            [religion=buddhist] {
-              icon-image: "poi_worship_buddhist.svg";
-            }
-
-            [religion=shinto] {
-              icon-image: "poi_worship_shinto.svg";
-            }
-
-            [religion=jewish] {
-              icon-image: "poi_worship_jewish.svg";
-            }
-
-            |z17- {
-                text: eval(locTag('name'));
-                text-color: @color_text_tourism;
-                [wikipedia],[website],[contact:website] {
-                    text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
-                }
-            }
+    node|z16-{
+        [artwork_type=fountain], [amenity=fountain] {
+            icon-image: "poi_fountain.svg";
+            icon-tint: @color_icon_fountain;
+            details-enabled: 0;
         }
-        |z13-[historic=archaeological_site] {
-            icon-image:"poi_archaeological_site.svg";
-            icon-tint: @color_icon_tourism;
-            |z16- {
-                text: eval(locTag('name'));
-                text-color: @color_text_tourism;
-                [wikipedia],[website],[contact:website] {
-                    text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
-                }
-            }
-        }
+    }
 
-        node|z16-{
-            [artwork_type=fountain], [amenity=fountain] {
-                icon-image: "poi_fountain.svg";
-                icon-tint: @color_icon_fountain;
-                details-enabled: 0;
-            }
-        }
-
-    @endif
+@endif

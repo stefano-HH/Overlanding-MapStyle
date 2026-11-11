@@ -1,5 +1,4 @@
 
-
 @if Bar
 
 |z15- {
@@ -10,9 +9,10 @@
         |z17- {
             text: eval(locTag('name'));
             text-color: @color_text_food;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
@@ -24,9 +24,10 @@
         |z17- {
             text: eval(locTag('name'));
             text-color: @color_text_food;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }

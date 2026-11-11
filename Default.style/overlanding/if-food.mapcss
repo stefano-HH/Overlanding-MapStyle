@@ -1,13 +1,14 @@
 
-
 @if Food
     |z16-{
         [amenity=fast_food] {
             icon-image: "poi_fast_food.svg";
             icon-tint: @color_icon_food;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_food;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -18,9 +19,11 @@
         [amenity=cafe] {
             icon-image: "poi_cafe.svg";
             icon-tint: @color_icon_food;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_food;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -31,9 +34,11 @@
         [amenity=restaurant] {
             icon-image: "poi_restaurant.svg";
             icon-tint: @color_icon_food;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_food;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -41,4 +46,5 @@
             }
         }
     }
+
 @endif

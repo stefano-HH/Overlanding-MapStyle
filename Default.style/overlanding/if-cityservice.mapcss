@@ -1,6 +1,6 @@
 
-
 @if CityService
+
     |z16- {
         [office=government] {
             icon-image: "poi_government.svg";
@@ -9,6 +9,7 @@
             |z17- {
                 text: eval(locTag('name'));
                 text-color: @color_text_offices;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -26,6 +27,7 @@
             |z18- {
                 text: eval(locTag('name'));
                 text-color: @color_text_offices;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -40,6 +42,7 @@
             |z18- {
                 text: eval(locTag('name'));
                 text-color: @color_text_offices;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");

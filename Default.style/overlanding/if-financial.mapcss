@@ -1,5 +1,4 @@
 
-
 @if Financial
     |z15-{
         [amenity=atm] {
@@ -16,9 +15,10 @@
 
             text: eval(locTag('name'));
             text-color: @color_icon_financial;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }

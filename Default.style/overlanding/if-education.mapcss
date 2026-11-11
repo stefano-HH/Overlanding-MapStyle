@@ -1,6 +1,6 @@
 
-
 @if Education
+
     |z15-[amenity=university] {
         icon-image: "poi_education.svg";
         icon-tint: @color_icon_offices;
@@ -8,9 +8,10 @@
         |z18- {
             text: eval(locTag('name'));
             text-color: @color_text_offices;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
@@ -23,12 +24,14 @@
         icon-image: "poi_education.svg";
         icon-tint: @color_icon_offices;
         icon-scale: @icon_x_small;
+
         |z18-{
             text: eval(locTag('name'));
             text-color: @color_text_offices;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
         }
@@ -37,9 +40,11 @@
             icon-image: "poi_baby_goods.svg";
             icon-tint: @color_icon_offices;
             icon-scale: @icon_x_small;
+
             |z18- {
                 text: eval(locTag('name'));
                 text-color: @color_text_offices;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -53,9 +58,11 @@
             icon-scale: @icon_x_small;
             text: eval(locTag('name'));
             text-color: @color_text_offices;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
+
 @endif

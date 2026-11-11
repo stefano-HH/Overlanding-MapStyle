@@ -1,5 +1,4 @@
 
-
 @if Beauty
 
     |z17- {
@@ -11,9 +10,10 @@
             icon-scale: @icon_small;
             text: eval(locTag('name'));
             text-color: @color_text_beauty;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
 
@@ -26,10 +26,12 @@
             icon-tint: @color_icon_beauty;
             text: eval(locTag('name'));
             text-color: @color_text_beauty;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
+
 @endif

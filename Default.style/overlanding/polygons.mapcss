@@ -1,3 +1,4 @@
+
 /******************************* Polygons *******************************/
 area {
     [boundary=administrative] {
@@ -6,6 +7,7 @@ area {
             dashes: 1;
             width: eval( zlinear(5, 1.5pt, 2pt, 2pt,3pt,4pt,5pt ));
             color: @color_boundary_country;
+
             |z13-{
                 casing-width: eval( zlinear(13, 5pt,8pt,12pt,15pt,20pt ));
                 casing-color: @color_boundary_country_casing;
@@ -13,14 +15,15 @@ area {
             }
 
         }
+
         // states boundaries
         |z5-[admin_level=3] {
             color: @color_boundary_state;
             dashes-width: eval( zlinear(7, 1pt,1pt,2pt,2pt,3pt,3pt,3pt,3pt,3pt ));
             dashes-color: @color_boundary_state;
             dashes: 1;
-
         }
+
         // regions
         |z7-[admin_level=4] {
             dashes: 1;
@@ -28,25 +31,7 @@ area {
             dashes-width: eval( zlinear(7, 1pt,1pt,2pt,2pt,3pt,3pt,3pt,3pt,3pt ));
             dashes-color: @color_boundary_state;
         }
-        // suburbs
-
     }
-
-    @if DownloadedMaps
-
-    @endif
-
-    // Other types of polygons. Less importnant is on top.
-
-    // -15
-
-
-    // mud of all kinds
-
-
-    // -14
-    // green color again
-
 
     // generalized buildings
     |z8-[landuse=residential]{
@@ -54,31 +39,15 @@ area {
         fill-color: @color_landuse_residential;
         text-color: @color_landuse_residential_text;
     }
+
     |z13-[landuse=residential] {
         text-color: @color_landuse_residential_text;
     }
-
-    // for hospital territory, not buildings
-
-
-
 
     |z15-[landuse=railway]{
         z-index: -14;
         fill-color: @color_railway_area;
     }
-
-    /* ***** all sand ***** */
-
-    |z10-{
-
-
-
-    }
-
-    // -13
-
-
 
     /* ***** National Parks ***** */
 
@@ -104,45 +73,27 @@ area {
             font-stroke-color: @color_wood;
  /*           fill-image: @image_national_park_area; */
             fill-color: @color_nationalpark_fill_light;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
         }
-
     }
 
-    |z10-{
-
-
-
-
+    |z15-{
+        [natural=wood], [landuse=forest] {
+            fill-image: @image_wood;
+        }
     }
 
-        |z15-{
-            [natural=wood], [landuse=forest] {
-             fill-image: @image_wood;
-            }
-
-
-
-
-
-
-
-
-        }
-
-    // -12
-    |z5-{
-        |z9-[landuse=basin],
-        [natural=water],
-        [landuse=reservoir],
-        [waterway=riverbank] {
-            z-index: -12;
-            fill-color: @color_water;
-            width: eval( zlinear( 9, 1px,1.5px ) );
-            color: @color_water;
-        }
+    |z9-[landuse=basin],
+    [natural=water],
+    [landuse=reservoir],
+    [waterway=riverbank] {
+        z-index: -12;
+        fill-color: @color_water;
+        width: eval( zlinear( 9, 1px,1.5px ) );
+        color: @color_water;
     }
 
     |z12-{
@@ -156,9 +107,11 @@ area {
             font-stroke-width: 2pt;
             font-stroke-color: @color_water;
             font-size: 8;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
+
             |z14-[natural=bay],
             |z14-[waterway=riverbank],
             |z15-[natural=water],
@@ -176,14 +129,17 @@ area {
             z-index: -13;
             fill-color: @color_scrub;
         }
+
         [leisure=park], [leisure=garden], [tourism=zoo] {
             z-index: -13;
             fill-color: @color_wood;
         }
+
         [landuse=orchard], [landuse=vineyard], [landuse=plant_nursery], [landuse=greenhouse_horticulture] {
             z-index: -13;
             fill-color: @color_orchard;
         }
+
         [landuse=allotments] {
             z-index: -13;
             fill-color: @color_allotments;
@@ -196,15 +152,6 @@ area {
         fill-color: @color_oceanwater;
     }
 
-    // grass of all kinds
-
-
-
-
-    // -11
-
-
-
     // parkings
     |z16-{
         [landuse=garages],[amenity=parking] {
@@ -214,6 +161,7 @@ area {
             width: 1pt;
             details-enabled: 0;
             text-priority: -3;
+
             |z18-{
                 icon-image: "poi_parking.svg";
                 icon-tint: @color_icon_parking;
@@ -221,26 +169,24 @@ area {
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
                 icon-tint: @color_icon_parking;
+
                 [wikipedia],[website],[contact:website] {
                     text: eval(locTag('name') . "⬈");
                 }
             }
         }
+
         [landuse=garages] {
             fill-color: @color_building;
         }
     }
-
-    // -10
-
-
-    // 0
 
     |z5-{
         |z9-[natural=bay],
         |z9-[landuse=basin],
         [natural=water], [landuse=reservoir], [waterway=riverbank] {
             fill-color: @color_water;
+
             [intermittent=yes] {
                 z-index: -2;
                 fill-image: @intermittent_water;
@@ -258,18 +204,8 @@ area {
             text-color: @color_wetland_text;
             font-stroke-color: @color_wetland_stroke;
             font-stroke-width: 1.5pt;
-                }
+        }
     }
-
-
-
-
-
-
-
-
-
-    // 2
 
     // fill image of military area desplayed on top of the other objects
     |z11-{
@@ -281,16 +217,12 @@ area {
         }
     }
 
-
-
-    // 3
-
     // all buildings
     [building] {
-            |z13-{
-                z-index: 3;
-                fill-color: @color_building;
-            }
+        |z13-{
+            z-index: 3;
+            fill-color: @color_building;
+        }
 
         // building stroke
         |z16-{
@@ -298,19 +230,8 @@ area {
             width: 1pt;
             color: @color_building_stroke;
             fill-color: @color_building;
-
-
         }
     }
-
-
-
-    // 4
-
-
-
-    // 10
-
 
 }
 
@@ -320,6 +241,4 @@ area {
 area,line|z12-[barrier]{
 	width: 2pt;
 	color: @color_barrier;
-
-
 }

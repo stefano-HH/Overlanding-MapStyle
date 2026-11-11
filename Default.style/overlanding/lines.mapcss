@@ -7,20 +7,21 @@ line {
         linecap: none;
         color: @color_motorway_casing;
         width: eval( zlinear(5, 2pt,2pt,2pt,2pt,2pt,2.5pt,3pt,3.5pt,4pt,max(5pt, metric(any(tag(lanes),3)*3.3)) ));
+
         |z8-{
             color: @color_motorway;
             casing-color: @color_motorway_casing;
             casing-width: eval( zlinear(8, 1.5pt,1.7pt, 2pt, 2.5pt, 2.7pt, 3pt ));
         }
-        }
+    }
 
-        |z12-[highway=motorway_link] {
-            linecap: none;
-            color: @color_motorway;
-            casing-color: @color_motorway_casing;
-            width: eval( zlinear(12, 2.4pt,2.8pt,3.2pt,3.6pt,max(5pt, metric(any(tag(lanes),2)*3)) ));
-            casing-width: eval( zlinear(8, 1.5pt,1.7pt, 2pt, 2.5pt, 2.7pt, 3pt ));
-        }
+    |z12-[highway=motorway_link] {
+        linecap: none;
+        color: @color_motorway;
+        casing-color: @color_motorway_casing;
+        width: eval( zlinear(12, 2.4pt,2.8pt,3.2pt,3.6pt,max(5pt, metric(any(tag(lanes),2)*3)) ));
+        casing-width: eval( zlinear(8, 1.5pt,1.7pt, 2pt, 2.5pt, 2.7pt, 3pt ));
+    }
 
     /* ********* Trunks ********* */
 
@@ -28,12 +29,14 @@ line {
         linecap: none;
         width: eval( zlinear(5, 2pt,2pt,2pt,2pt,2pt,2.5pt,3pt,3.5pt,4pt,max(5pt, metric(any(tag(lanes),3)*3.3)) ));
         color: @color_trunk_casing;
+
         |z9-{
             color: @color_trunk;
             casing-color: @color_trunk_casing;
             casing-width: eval( zlinear(8, 1.5pt,1.7pt, 2pt, 2.5pt, 2.7pt, 3pt ));
         }
     }
+
     |z12-[highway=trunk_link] {
         linecap: none;
         width: eval( zlinear(11, 2.4pt,2.8pt,3.2pt,3.6pt,max(5pt, metric(any(tag(lanes),2)*2.8)) ));
@@ -50,6 +53,7 @@ line {
         width: eval( zlinear(8, 1.2pt, 1.5pt, 1.8pt, 2pt, 2.5pt, 3pt, max(5pt, metric(any(tag(lanes), 2) * 2.5)) ));
         casing-width: eval( zlinear(8, 0pt,0.5pt,1pt ));
     }
+
     |z12-[highway=primary_link] {
         color: @color_primary;
         casing-color: @color_primary_casing;
@@ -57,12 +61,13 @@ line {
         casing-width: eval( zlinear(8, 0pt,0.5pt,1pt ));
     }
 
-/* ********* Secondary ********* */
+    /* ********* Secondary ********* */
 
     |z8-[highway=secondary],
     |z8-[highway=raceway] {
         width: 1pt;
         color: @road_casing;
+
         |z10-{
             color: @color_secondary;
             casing-color: @color_secondary_casing;
@@ -70,6 +75,7 @@ line {
             casing-width: eval( zlinear(10, 0.6pt, 0.7pt ));
         }
     }
+
     |z12-[highway=secondary_link] {
         color: @color_secondary;
         casing-color: @color_secondary_casing;
@@ -77,22 +83,25 @@ line {
         casing-width: eval( zlinear(10, 0.6pt, 0.7pt, 0.5pt ));
     }
 
- /* ********* Tertiary ********* */
+    /* ********* Tertiary ********* */
 
     |z9-[highway=tertiary] {
         width: 1pt;
         casing-width: 0.5pt;
         color: @color_tertiary_thin;
+
         |z10-{
             color: @color_tertiary;
             casing-color: @color_tertiary_casing_dark;
             width: eval( zlinear(10, 1.5pt, 2.5pt, 3pt, 3.5pt, 4pt, max(6pt, metric(any(tag(lanes), 2) * 2.5)) ));
             casing-width: eval( zlinear(10, 0.6pt, 0.7pt, 0.5pt ));
         }
+
         |z12-{
             casing-color: @color_tertiary_casing;
         }
     }
+
     |z12-[highway=tertiary_link] {
         color: @color_tertiary;
         casing-color: @color_tertiary_casing;
@@ -100,7 +109,8 @@ line {
         casing-width: eval( zlinear(10, 0.6pt, 0.7pt, 0.5pt ));
     }
 
-/* ********* unclassified Road ********* */
+    /* ********* unclassified Road ********* */
+
     |z11-{
         [highway=unclassified],
         [highway=road] {
@@ -118,6 +128,7 @@ line {
         [highway=service] {
             width: 1pt;
             color: @color_small_road_thin;
+
             |z15-{
                 width: eval( zlinear(15, 3pt,4pt,4.5pt,5pt,max(6pt, metric(any(tag(lanes),1)*2.5)) ));
                 color: @color_small_road;
@@ -141,6 +152,7 @@ line {
             }
         }
     }
+
     |z13-{
         [highway=track] {
             text: eval(
@@ -160,19 +172,26 @@ line {
             font-stroke-color: @color_track_casing;
             text-priority: 15;
             width: eval( zlinear(13, 1.5pt, 1.75pt, 2.25pt, 2.5pt ));
-       }
-    }
-    |z16-{
-        [highway=track] {
-            font-size: 10;
         }
-    }
 
-    |z13-{
-        [highway=construction], [highway][access=private] {
+        [highway=construction] {
             dashes-width: eval( zlinear(13, 2pt,3pt,3pt,4pt ));
             dashes-color: @color_road_construction;
             dashes:8,4;
+        }
+
+        [highway]{
+            [access=private],
+            [motor_vehicle=no],
+            [motorcar=no],
+            [motorcycle=no],
+            [vehicle=no],
+            [foot=no] {
+                dashes-width: eval( zlinear(13, 3pt,4pt ));
+                dashes-color: @color_private;
+                dashes:8,4;
+
+            }
         }
     }
 
@@ -189,59 +208,48 @@ line {
         }
     }
 
-    |z13-[highway]{
-        [access=private],
-        [motor_vehicle=no],
-        [motorcar=no],
-        [motorcycle=no],
-        [vehicle=no],
-        [foot=no] {
-            dashes-width: eval( zlinear(13, 3pt,4pt ));
-            dashes-color: @color_private;
+    |z16-{
+        [highway=track] {
+            font-size: 10;
         }
 
+        [highway=footway],
+        [highway=bridleway] {
+            casing-color: @color_dashes_casing;
+            dashes-color: @color_footway_dashes;
+        }
 
+        [highway=cycleway] {
+            dashes-color: @color_cycleway_dashes;
+            dashes:2,2;
+        }
 
+        [highway=footway],
+        [highway=path],
+        [highway=pedestrian],
+        [highway=cycleway],
+        [highway=bridleway] {
+            width:        eval( zlinear(16, 1.5pt, 2pt ));
+            dashes-width: eval( zlinear(16, 1.5pt, 2pt ));
+            dashes-color: @color_path_dashes;
+            dashes:12,6;
+        }
+
+        [highway=steps] {
+            width:        eval( zlinear(16, 5pt,6pt ));
+            dashes-width: eval( zlinear(16, 5pt,6pt ));
+            dashes-color: @color_footway_dashes;
+            dashes:4,4;
+
+            [bridge] {
+                casing-color: @color_bridge;
+                casing-width: 0; //eval( zlinear( 15, 0.5pt, 1pt ) );
+
+            }
+        }
     }
 
-        |z15-{
 
-                |z16-[highway=footway],
-                [highway=bridleway] {
-                    casing-color: @color_dashes_casing;
-                    dashes-color: @color_footway_dashes;
-            }
-
-                |z16-[highway=cycleway]
-            {
-                dashes-color: @color_cycleway_dashes;
-            }
-
-            [highway=path], [highway=pedestrian] {
-                dashes-color: @color_path_dashes;
-            }
-            [highway=footway],[highway=path],[highway=pedestrian], [highway=cycleway],[highway=bridleway] {
-                width:        eval( zlinear(16, 1.5pt, 2pt ));
-                dashes-width: eval( zlinear(16, 1.5pt, 2pt ));
-                dashes:12,6;
-            }
-
-            [highway=cycleway] {
-                dashes-color: @color_cycleway_dashes;
-                dashes:2,2;
-            }
-            [highway=steps] {
-                width:        eval( zlinear(16, 5pt,6pt ));
-                dashes-width: eval( zlinear(16, 5pt,6pt ));
-                dashes-color: @color_footway_dashes;
-                dashes:4,4;
-                [bridge] {
-                    casing-color: @color_bridge;
-                    casing-width: 0; //eval( zlinear( 15, 0.5pt, 1pt ) );
-
-                }
-            }
-        }
     relation[route=subway], [railway=light_rail] {
         // Draw metro lines with their relation colour when available.
         line|z13- {
@@ -252,8 +260,9 @@ line {
         }
     }
 
-    [railway] {
+    // Railway -------------- //
 
+    [railway] {
         |z9-[railway=rail] {
             color: @color_railway;
             width: 3pt;
@@ -265,18 +274,17 @@ line {
         }
 
         |z15-[railway=tram] {
-            width: eval( zlinear(       14, 2pt,3pt,4pt ) );
+            width: eval( zlinear(14, 2pt,3pt,4pt ) );
             color: @color_tram;
             dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
             dashes-color: @color_railway_dashes;
             dashes:8,8;
             casing-width: 1pt;
             casing-color: @color_railway_dashes;
-            z-index: 6;
         }
 
         |z15-[railway=subway] {
-            width: eval( zlinear(       14, 2pt,3pt,4pt ) );
+            width: eval( zlinear(14, 2pt,3pt,4pt ) );
             color: @color_subway;
             dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
             dashes-color: @color_railway_dashes;
@@ -284,8 +292,6 @@ line {
             casing-width: 1pt;
             casing-color: @color_railway_dashes;
         }
-
-
 
         |z14-[railway=light_rail],
         |z15-[railway=funicular],
@@ -303,16 +309,9 @@ line {
             width: none;
             layer: -4;
         }
-
-
     }
 
-    |z13-{
-        [man_made=pier],[man_made=groyne] {
-            width: eval( zlinear(    13,    1pt,2pt,2pt,3pt,3pt,4pt ) );
-            color: @color_ground;
-        }
-    }
+   // Waterway -------------- //
 
     |z10-{
         [waterway=river] {
@@ -325,19 +324,24 @@ line {
         }
     }
 
-    |z13-[waterway] {
-        [waterway=river][CEMT],
-        [waterway=river],
-        [waterway=stream],
-        [waterway=canal],
-        [waterway=drain],
-        [waterway=ditch] {
-            width: eval( zlinear( 13, 2pt, 2.5pt, 3pt ));
-            color: @color_water;
-            z-index: -20;
-
+    |z13-{
+        [man_made=pier],[man_made=groyne] {
+            width: eval( zlinear(    13,    1pt,2pt,2pt,3pt,3pt,4pt ) );
+            color: @color_ground;
         }
 
+        [waterway] {
+            [waterway=river][CEMT],
+            [waterway=river],
+            [waterway=stream],
+            [waterway=canal],
+            [waterway=drain],
+            [waterway=ditch] {
+                width: eval( zlinear( 13, 2pt, 2.5pt, 3pt ));
+                color: @color_water;
+                z-index: -20;
+            }
+        }
     }
 
     |z16-[waterway=river],
@@ -375,6 +379,7 @@ line {
         dashes: 8,0;
         dashes-width: 1.5pt;
         dashes-color: @color_cliff;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
@@ -383,7 +388,6 @@ line {
             fill-image: @image_cliff;
             width: 12pt;
             dashes-width: 1.5pt;
-
         }
     }
 

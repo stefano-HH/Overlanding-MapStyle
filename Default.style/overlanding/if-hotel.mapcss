@@ -1,6 +1,6 @@
 
-
 @if Hotel
+
     |z17-(
         [amenity=hotel],
         [tourism=hotel],
@@ -17,12 +17,14 @@
         |z17-{
             text: eval(locTag('name'));
             text-color: @color_text_hotels;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
+
     |z12-[tourism=camp_site] {
         icon-image: "poi_camping.svg";
         icon-tint: @color_icon_hotels;
@@ -32,23 +34,27 @@
         |z17-{
             text: eval(locTag('name'));
             text-color: @color_text_hotels;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }
+
     |z12-[tourism=caravan_site] {
         icon-image: "poi_motorhome.svg";
         icon-tint: @color_icon_hotels_dark;
         icon-scale: @icon_small;
         text-priority: 10;
+
         |z17-{
             text: eval(locTag('name'));
             text-color: @color_text_hotels;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
         }
     }

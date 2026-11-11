@@ -1,14 +1,15 @@
 
-
 @if Entertaiment
 
     |z15-{
         [leisure=water_park] {
             icon-image: "poi_pool.svg";
             icon-tint: @color_icon_activity;
+
             |z16-{
                 text: eval(locTag('name'));
                 text-color: @color_label_text;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -19,9 +20,11 @@
         [tourism=zoo] {
             icon-image: "poi_zoo.svg";
             icon-tint: @color_icon_tourism;
+
             |z16-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -32,9 +35,11 @@
         [amenity=cinema] {
             icon-image: "poi_cinema.svg";
             icon-tint: @color_icon_tourism;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -45,9 +50,11 @@
         [amenity=theatre] {
             icon-image: "poi_theater.svg";
             icon-tint: @color_icon_tourism;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -58,9 +65,11 @@
         [tourism=theme_park] {
             icon-image: "poi_theme_park.svg";
             icon-tint: @color_icon_tourism;
+
             |z16-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");
@@ -71,9 +80,11 @@
         [amenity=nightclub] {
             icon-image: "poi_disco.svg";
             icon-tint: @color_icon_food;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_food;
+
                 [wikipedia],[website],[contact:website] {
                     text-color: @color_text_wikipedia;
                     text: eval(locTag('name') . "⬈");

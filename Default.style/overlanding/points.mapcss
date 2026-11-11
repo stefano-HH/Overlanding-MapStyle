@@ -16,6 +16,7 @@ node,area  {
             font-weight: normal;
             text-big-padding: false;
         }
+
         |z2-8 {
             text: eval(locTag('name'));
             text-color: @color_name_text;
@@ -37,6 +38,7 @@ node,area  {
             text-priority: 8;
             text-big-padding: true;
         }
+
         |z5-8[admin_level=3] {
             text: eval(locTag('name'));
             text-color: @color_name_text;
@@ -60,10 +62,10 @@ node,area  {
             font-stroke-width: 3pt;
             font-stroke-color: @color_label_stroke;
             text-priority: 7;
-                [wikipedia],[website],[contact:website] {
+
+            [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
-
         }
     }
 
@@ -76,6 +78,7 @@ node,area  {
         font-stroke-width: 1.5pt;
         text-priority: 6;
         text-big-padding: true;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
@@ -88,6 +91,7 @@ node,area  {
         font-stroke-width: 2px;
         font-weight: light;
         text-priority: 4;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
@@ -105,9 +109,10 @@ node,area  {
             font-stroke-width: 2pt;
             text-priority: 9;
             text-big-padding: false;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
     }
 
@@ -119,6 +124,7 @@ node,area  {
         font-weight: bolder;
         font-stroke-width: 2pt;
         font-stroke-color: @color_label_stroke;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
@@ -128,6 +134,7 @@ node,area  {
         text: eval(locTag('name'));
         text-color: @color_suburb_text;
         text-priority: 2;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
@@ -137,10 +144,12 @@ node,area  {
         [place]{
             text-priority: -10;
         }
+
         [place=square] {
             text: eval(locTag('name'));
             text-color: @color_suburb_text;
             text-priority: 1;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
@@ -149,6 +158,7 @@ node,area  {
         [leisure=stadium] {
             text: eval(locTag('name'));
             text-color: @color_label_text;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
@@ -178,6 +188,7 @@ node,area  {
             text-color: @color_water_text;
             font-stroke-color: @color_water_stroke;
             font-stroke-width: 2pt;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
@@ -190,66 +201,70 @@ node,area  {
         text-color: @color_nationalpark_text;
         font-size: 8;
         text-priority: 1;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
    }
 
-        |z9-{
-            [boundary=protected_area],
-            [boundary=national_park],
-            [landuse=basin],
-            [landuse=reservoir],
-            [leisure=nature_reserve],
-            |z15-(
-                [leisure=park],
-                [leisure=garden]
-            ) {
-                text: eval(locTag('name'));
-                text-color: @color_nationalpark_text;
-                text-priority: -1;
-                font-size: 11;
-                font-stroke-width:2pt;
-                font-stroke-color: @color_label_stroke;
-                font-weight: bolder;
-                [wikipedia],[website],[contact:website] {
-                    text: eval(locTag('name') . "⬈");
-                }
+    |z9-{
+        [boundary=protected_area],
+        [boundary=national_park],
+        [landuse=basin],
+        [landuse=reservoir],
+        [leisure=nature_reserve],
+        |z15-(
+            [leisure=park],
+            [leisure=garden]
+        ) {
+            text: eval(locTag('name'));
+            text-color: @color_nationalpark_text;
+            text-priority: -1;
+            font-size: 11;
+            font-stroke-width:2pt;
+            font-stroke-color: @color_label_stroke;
+            font-weight: bolder;
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
             }
         }
+    }
 
     |z13-[landuse=allotments] {
         text-color: @color_allotments_text;
         font-stroke-width:2pt;
         font-stroke-color: @color_allotments;
+
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
     }
 
-     node|z14- {
+    |z14- {
         [natural=bay] {
             text: eval(locTag('name'));
             text-priority: 5;
             font-size: 10;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-        }
-    }
 
-    |z14-[ref] {
-        [boundary=forest_compartment],
-        [boundary=forestry_compartment] {
-            text: eval(tag('ref'));
-            text-color: @color_nationalpark_text;
-            text-priority: -2;
-            font-size: 8;
-            font-stroke-width:2pt;
-            font-stroke-color: @color_wood;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
+
+        [ref] {
+            [boundary=forest_compartment],
+            [boundary=forestry_compartment] {
+                text: eval(tag('ref'));
+                text-color: @color_nationalpark_text;
+                text-priority: -2;
+                font-size: 8;
+                font-stroke-width:2pt;
+                font-stroke-color: @color_wood;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
         }
     }
 
@@ -262,53 +277,61 @@ node,area  {
             font-size:12;
             font-stroke-width:2pt;
             font-stroke-color: @color_ground;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
+
+        [man_made=water_tower] {
+            icon-image: "poi_water_tower.svg";
+            icon-tint: @color_hunting_stand;
+            details-enabled: 0;
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
     }
 
-    |z15-[amenity=hunting_stand] {
+    |z15-{
+        [amenity=hunting_stand] {
         icon-image: "poi_hunting_stand.svg";
         icon-tint: @color_hunting_stand;
         details-enabled: 0;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-    }
 
-    |z16-[man_made=water_tower] {
-        icon-image: "poi_water_tower.svg";
-        icon-tint: @color_hunting_stand;
-        details-enabled: 0;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-    }
-
-    |z15-[tourism=attraction] {
-        icon-image:"poi_tourism_attraction.svg";
-        icon-tint: @color_icon_tourism;
-
-        |z17-{
-            text: eval(locTag('name'));
-            text-color: @color_text_tourism;
         [wikipedia],[website],[contact:website] {
             text: eval(locTag('name') . "⬈");
         }
         }
+
+        [tourism=attraction] {
+            icon-image:"poi_tourism_attraction.svg";
+            icon-tint: @color_icon_tourism;
+
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
     }
 
-   |z16-{
+    |z16-{
         [tourism=information] {
             icon-image:"poi_info.svg";
             icon-tint: @color_icon_tourism;
             icon-scale: @icon_x_small;
             font-size: 8;
+
             |z18-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
                 icon-scale: @icon_small;
+
                 [wikipedia],[website],[contact:website] {
                     text: eval(locTag('name') . "⬈");
                 }
@@ -329,196 +352,226 @@ node,area  {
             }
         }
 
-    [tourism=information][information=map] {
-        icon-image: "poi_info_map.svg";
-        icon-tint: @color_icon_tourism;
-        icon-scale: @icon_x_small;
-        |z18-{
-            text: eval(locTag('name'));
-            text-color: @color_text_tourism;
-            icon-scale: @icon_small;
-            [wikipedia],[website],[contact:website] {
-                text: eval(locTag('name') . "⬈");
-            }
-        }
-    }
-    [tourism=information][information=guidepost] {
-        icon-image:"poi_guidepost.svg";
-        icon-tint: @color_icon_tourism;
-        icon-scale: @icon_x_small;
-        |z18-{
-            text: eval(locTag('name'));
-            text-color: @color_text_tourism;
-            icon-scale: @icon_small;
-            [wikipedia],[website],[contact:website] {
-                text: eval(locTag('name') . "⬈");
-            }
-        }
-    }
+        [tourism=information][information=map] {
+            icon-image: "poi_info_map.svg";
+            icon-tint: @color_icon_tourism;
+            icon-scale: @icon_x_small;
 
-    [tourism=information][information=board] {
-        icon-image: "poi_info_board.svg";
-        icon-tint: @color_icon_tourism;
-        |z18-{
-            text: eval(locTag('name'));
-            text-color: @color_text_tourism;
-            [wikipedia],[website],[contact:website] {
-                text: eval(locTag('name') . "⬈");
-            }
-        }
-    }
-
-    [tourism=viewpoint] {
-        icon-image: "poi_viewpoint.svg";
-        icon-tint: @color_icon_tourism;
-        |z18-{
-            text: eval(locTag('name'));
-            text-color: @color_text_tourism;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-        }
-    }
-
-   }
-
-   |z13-[ford]{
-    icon-image: "poi_ford.svg";
-    icon-scale: @icon_small;
-    icon-tint: @color_icon_ford;
-    |z15-{
-        text: eval(cond(locTag('name'), cond(tag('depth'), locTag('name').' '.formatElevation(tag('depth')), locTag('name')), formatElevation(tag('depth'))));
-        text-color: @color_text_ford;
-        icon-scale: @icon_medium;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-    }
-}
-
-//        |z15-{
-//            [amenity=charging_station] {
-//                icon-image: "poi_charging_station.svg";
-//                icon-tint: @color_icon_transport;
-//                |z17-{
-//                    text: eval(locTag('name'));
-//                    text-color: @color_text_transport;
-//                }
-//            }
-//        }
-        |z12-[amenity=fuel] {
-                icon-image: "poi_gas_station.svg";
-                icon-tint: @color_icon_fuel;
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
                 icon-scale: @icon_small;
-                text-priority: 100;
-                z-index: 10;
-                |z14-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-                    [wikipedia],[website],[contact:website] {
-                        text: eval(locTag('name') . "⬈");
-                    }
-                }
-            }
 
-        |z16-{
-            [shop=car_repair],
-            [shop=car_parts],
-            [shop=car][service=tyres],
-            [shop=car][service=parts],
-            [shop=car][service=repair] {
-                icon-image: "poi_car_service.svg";
-                icon-tint: @color_icon_transport;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-                    [wikipedia],[website],[contact:website] {
-                        text: eval(locTag('name') . "⬈");
-                    }
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
                 }
             }
-            [amenity=car_rental],
-            [shop=car][service=dealer],
-            [shop=car][!service],
-            [shop=motorcycle] {
-                icon-image: "poi_car_rental.svg";
-                icon-tint: @color_icon_transport;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-                    [wikipedia],[website],[contact:website] {
-                        text: eval(locTag('name') . "⬈");
-                    }
-                }
-            }
-            [amenity=car_sharing] {
-                icon-image: "poi_car_sharing.svg";
-                icon-tint: @color_icon_transport;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
         }
-                }
-            }
-            [amenity=car_wash] {
-                icon-image: "poi_car_wash.svg";
-                icon-tint: @color_icon_transport;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-                }
-            }
-            [amenity=parking] {
-                icon-image:"poi_parking.svg";
-                icon-tint: @color_icon_transport;
-                details-enabled: 0;
-                text-priority: -3;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-                }
-            }
-            [amenity=parking][access=private] {
-                icon-tint: @color_icon_transport_private;
-                text-priority: -10;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-            }
 
-            node[amenity=parking_entrance] {
-                icon-image:"poi_parking_entrance.svg";
-                icon-tint: @color_icon_transport;
-                text-priority: -3;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+        [tourism=information][information=guidepost] {
+            icon-image:"poi_guidepost.svg";
+            icon-tint: @color_icon_tourism;
+            icon-scale: @icon_x_small;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+                icon-scale: @icon_small;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
                 }
             }
-            
-
         }
+
+        [tourism=information][information=board] {
+            icon-image: "poi_info_board.svg";
+            icon-tint: @color_icon_tourism;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [tourism=viewpoint] {
+            icon-image: "poi_viewpoint.svg";
+            icon-tint: @color_icon_tourism;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
+
+    |z13-[ford]{
+        icon-image: "poi_ford.svg";
+        icon-scale: @icon_small;
+        icon-tint: @color_icon_ford;
+
+        |z15-{
+            text: eval(cond(locTag('name'), cond(tag('depth'), locTag('name').' '.formatElevation(tag('depth')), locTag('name')), formatElevation(tag('depth'))));
+            text-color: @color_text_ford;
+            icon-scale: @icon_medium;
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+//  |z15-{
+//      [amenity=charging_station] {
+//          icon-image: "poi_charging_station.svg";
+//          icon-tint: @color_icon_transport;
+//          |z17-{
+//              text: eval(locTag('name'));
+//              text-color: @color_text_transport;
+//          }
+//      }
+//  }
+
+    |z12-[amenity=fuel] {
+            icon-image: "poi_gas_station.svg";
+            icon-tint: @color_icon_fuel;
+            icon-scale: @icon_small;
+            text-priority: 100;
+            z-index: 10;
+
+            |z14-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+    |z16-{
+        [shop=car_repair],
+        [shop=car_parts],
+        [shop=car][service=tyres],
+        [shop=car][service=parts],
+        [shop=car][service=repair] {
+            icon-image: "poi_car_service.svg";
+            icon-tint: @color_icon_transport;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=car_rental],
+        [shop=car][service=dealer],
+        [shop=car][!service],
+        [shop=motorcycle] {
+            icon-image: "poi_car_rental.svg";
+            icon-tint: @color_icon_transport;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=car_sharing] {
+            icon-image: "poi_car_sharing.svg";
+            icon-tint: @color_icon_transport;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=car_wash] {
+            icon-image: "poi_car_wash.svg";
+            icon-tint: @color_icon_transport;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=parking] {
+            icon-image:"poi_parking.svg";
+            icon-tint: @color_icon_transport;
+            details-enabled: 0;
+            text-priority: -3;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+
+        [amenity=parking][access=private] {
+            icon-tint: @color_icon_transport_private;
+            text-priority: -10;
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
+        }
+
+        [amenity=parking_entrance] {
+            icon-image:"poi_parking_entrance.svg";
+            icon-tint: @color_icon_transport;
+            text-priority: -3;
+
+            |z18-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
+            }
+        }
+    }
 
     |z17-[amenity=shelter] {
         icon-image: "poi_shelter.svg";
         icon-tint: @color_icon_activity;
+
         |z16-{
             text: eval(locTag('name'));
             text-color: @color_text_activity;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
     }
 
@@ -527,24 +580,28 @@ node,area  {
         [leisure=picnic_table] {
             icon-image: "poi_picnic_table.svg";
             icon-tint: @color_icon_activity;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_activity;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
         [leisure=firepit] {
             icon-image: "poi_firepit.svg";
             icon-tint: @color_icon_activity;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_activity;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -552,36 +609,42 @@ node,area  {
         [amenity=bbq] {
             icon-image: "poi_BBQ.svg";
             icon-tint: @color_icon_activity;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_activity;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
         [leisure=fishing] {
             icon-image: "poi_fishing.svg";
             icon-tint: @color_icon_activity;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_activity;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
         [waterway=waterfall] {
             icon-image: "poi_waterfall.svg";
             icon-tint: @color_icon_tourism;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -590,6 +653,7 @@ node,area  {
             icon-tint: @color_icon_transport;
             details-enabled: 0;
         }
+
         [natural=stone] {
             icon-image: "poi_stone.svg";
             icon-tint: @color_icon_transport;
@@ -599,12 +663,14 @@ node,area  {
         [man_made=tower] {
             icon-image: "poi_tower.svg";
             icon-tint: @color_icon_transport;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -612,12 +678,14 @@ node,area  {
         [man_made=beacon] {
             icon-image: "poi_beacon.svg";
             icon-tint: @color_icon_transport;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -625,12 +693,14 @@ node,area  {
         [man_made=lighthouse] {
             icon-image: "poi_lighthouse.svg";
             icon-tint: @color_icon_transport;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -638,12 +708,14 @@ node,area  {
             icon-image: "poi_castle.svg";
             icon-tint: @color_icon_transport;
             text-priority: 5;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
 
@@ -651,17 +723,19 @@ node,area  {
             icon-image: "poi_fort.svg";
             icon-tint: @color_icon_transport;
             text-priority: 5;
+
             |z17-{
                 text: eval(locTag('name'));
                 text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+                [wikipedia],[website],[contact:website] {
+                    text: eval(locTag('name') . "⬈");
+                }
             }
         }
     }
 
-    node|z14-[power=tower] {
+    |z14-[power=tower] {
         icon-image: "poi_power_node.svg";
         icon-scale: 1;
         icon-tint: @color_power_line;
@@ -673,160 +747,152 @@ node,area  {
         }
     }
 
-    node|z15-[power=node] {
+    |z15-[power=node] {
         icon-image: "poi_power_node.svg";
         icon-scale: 0.8;
         icon-tint: @color_power_line;
         details-enabled: 0;
     }
 
-    node|z18-[natural=tree] {
+    |z18-[natural=tree] {
         icon-image: "poi_tree.svg";
         icon-tint: @color_icon_offices;
         text-priority: -10;
         details-enabled: 0;
     }
 
-    node|z18-[amenity=bench] {
+    |z18-[amenity=bench] {
         icon-image: "poi_bench.svg";
         icon-tint: @color_icon_tint;
         text-priority: -9;
         details-enabled: 0;
     }
 
-    
-
-        area|z13-{
-            [natural=beach],
-            [natural=sand],
-            [landuse=salt_pond] {
-                text: eval(locTag('name'));
-                text-color: @color_beach_text;
-                font-size: 10;
-                font-stroke-width: 1pt;
-                font-stroke-color: @color_sand;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
-            }
-        }
-
-        |z15-{
-            [amenity=toilets] {
-                icon-image: "poi_WC.svg";
-                icon-scale: @icon_x_small;
-                icon-tint: @color_icon_tourism;
-            }
-            [man_made=water_well],
-            node[man_made=water_tap],
-            node[amenity=drinking_water],
-            node[amenity=water_point]{
-                icon-image: "poi_io_water.svg";
-                icon-tint: @color_icon_parking;
-                icon-scale: @icon_x_small;
-            }
-        }
-
-    |z15-[highway=pedestrian] {
-        text: eval(locTag('name'));
-        font-size: 8;
-        text-color: @color_label_text;
-        font-stroke-color: @color_footway_area;
-        details-enabled: 0;
-        text-priority: 1;
-
-        |z16-{
-            font-size: 9;
-        }
-        |z17-{
+    area|z13-{
+        [natural=beach],
+        [natural=sand],
+        [landuse=salt_pond] {
+            text: eval(locTag('name'));
+            text-color: @color_beach_text;
             font-size: 10;
+            font-stroke-width: 1pt;
+            font-stroke-color: @color_sand;
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
+        }
+    }
+
+    |z15-{
+        [amenity=toilets] {
+            icon-image: "poi_WC.svg";
+            icon-scale: @icon_x_small;
+            icon-tint: @color_icon_tourism;
+        }
+
+        [man_made=water_well],
+        node[man_made=water_tap],
+        node[amenity=drinking_water],
+        node[amenity=water_point]{
+            icon-image: "poi_io_water.svg";
+            icon-tint: @color_icon_parking;
+            icon-scale: @icon_x_small;
+        }
+
+        [highway=pedestrian] {
+            text: eval(locTag('name'));
+            font-size: 8;
+            text-color: @color_label_text;
+            font-stroke-color: @color_footway_area;
+            details-enabled: 0;
+            text-priority: 1;
+            |z16-{
+                font-size: 9;
+            }
+            |z17-{
+                font-size: 10;
+            }
         }
     }
 
     |z12-[aeroway=aerodrome] {
         icon-image: "poi_airport.svg";
         icon-tint: @color_icon_transport;
+
         |z14-{
             text: eval(locTag('name'));
             text-color: @color_text_transport;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
     }
 
-        |z17-[barrier][barrier!=kerb] {
-            icon-image: "poi_barrier.svg";
-            icon-scale: 0.9;
-            icon-tint: red;
-            details-enabled: 0;
-            text-priority: -1;
+    |z17-[barrier][barrier!=kerb] {
+        icon-image: "poi_barrier.svg";
+        icon-scale: 0.9;
+        icon-tint: red;
+        details-enabled: 0;
+        text-priority: -1;
 
-            [barrier=gate] {
-                icon-image: "poi_gate.svg";
-            }
-
-            [barrier=entrance] {
-                icon-image:"poi_barrier_entrance.svg";
-            }
-
-            [barrier=toll_booth] {
-                icon-image:"poi_barrier_toll_booth.svg";
-            }
-
-            [barrier=lift_gate] {
-                icon-image: "poi_lift_gate.svg";
-            }
-            
-            
-
+        [barrier=gate] {
+            icon-image: "poi_gate.svg";
         }
 
-        |z11-(
-            [natural=peak],
-            [natural=saddle],
-            [natural=volcano],
-            [mountain_pass=yes],
-            [mountain_pass]
-
-        ) {
-            icon-scale: 0.9;
-            
-            
-            
-            [mountain_pass=yes] {
-                icon-image: "poi_cross.svg";
-                icon-tint: @color_icon_peak;
-            }
-
-            |z13-{
-                icon-scale: 1.5;
-                text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
-                text-color: @color_text_peak;
-                font-size: 10;
-                font-stroke-width:2.5pt;
-                font-stroke-color: @color_label_stroke;
-                
-                
-            }
-            |z15- {
-                font-size: 10pt;
-            }
-
+        [barrier=entrance] {
+            icon-image:"poi_barrier_entrance.svg";
         }
-        |z14-[natural=spring] {
-            text:"s";
-            text-color: @color_water;
-            icon-image: "poi_io_water.svg";
-            icon-tint: @color_icon_parking;
 
+        [barrier=toll_booth] {
+            icon-image:"poi_barrier_toll_booth.svg";
         }
+
+        [barrier=lift_gate] {
+            icon-image: "poi_lift_gate.svg";
+        }
+    }
+
+    |z11-(
+        [natural=peak],
+        [natural=saddle],
+        [natural=volcano],
+        [mountain_pass=yes],
+        [mountain_pass]
+    ) {
+        icon-scale: 0.9;
+        [mountain_pass=yes] {
+            icon-image: "poi_cross.svg";
+            icon-tint: @color_icon_peak;
+        }
+
+        |z13-{
+            icon-scale: 1.5;
+            text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
+            text-color: @color_text_peak;
+            font-size: 10;
+            font-stroke-width:2.5pt;
+            font-stroke-color: @color_label_stroke;
+        }
+
+        |z15- {
+            font-size: 10pt;
+        }
+    }
+
+    |z14-[natural=spring] {
+        text:"s";
+        text-color: @color_water;
+        icon-image: "poi_io_water.svg";
+        icon-tint: @color_icon_parking;
+    }
 
     |z11-[natural=cave_entrance] {
-    icon-image: "poi_circle_small.svg";
-    icon-scale: 1.2;
-    icon-tint: @color_icon_capital_tint;
-}
+        icon-image: "poi_circle_small.svg";
+        icon-scale: 1.2;
+        icon-tint: @color_icon_capital_tint;
+    }
 
     |z14- [natural=cave_entrance] {
         icon-image: "poi_cave_entrance.svg";
@@ -835,9 +901,10 @@ node,area  {
         |z16- {
             text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
             text-color: @color_text_mine;
-        [wikipedia],[website],[contact:website] {
-            text: eval(locTag('name') . "⬈");
-        }
+
+            [wikipedia],[website],[contact:website] {
+                text: eval(locTag('name') . "⬈");
+            }
         }
     }
 
@@ -848,6 +915,7 @@ node,area  {
         |z15- {
             text: eval(locTag('name'));
             text-color: @color_text_mine;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
@@ -862,11 +930,11 @@ node,area  {
             font-stroke-width:2pt;
             font-stroke-color: @color_label_stroke;
             text-priority: -1;
+
             [wikipedia],[website],[contact:website] {
                 text: eval(locTag('name') . "⬈");
             }
         }
     }
-
 }
 

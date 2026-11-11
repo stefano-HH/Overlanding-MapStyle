@@ -1,12 +1,13 @@
 
-
 @if Railway
+
     |z13-[railway=station],
     |z14-[railway=halt],
     |z16-[building=train_station] {
         icon-image: "poi_circle_small.svg";
         icon-tint:eval(any(tag('colour'), @color_icon_transport));
         text-priority: 6;
+
         |z14-{
             icon-image: "poi_railway.svg";
             [transport=subway],
@@ -15,6 +16,7 @@
                 text-priority: 7;
             }
         }
+
         |z14-[railway=station][transport=subway],
         |z14-[railway=station][station=subway],
         |z15-[railway=station],
@@ -22,13 +24,15 @@
         |z17-[building=train_station] {
             text: eval(locTag('name'));
             text-color: @color_text_transport;
+
             [wikipedia],[website],[contact:website] {
                 text-color: @color_text_wikipedia;
-                    text: eval(locTag('name') . "⬈");
+                text: eval(locTag('name') . "⬈");
             }
-       }
+        }
     }
-    node|z15-[railway=subway_entrance] {
+
+    |z15-[railway=subway_entrance] {
         icon-image: "poi_circle_small.svg";
         icon-tint:eval(any(tag('colour'), @color_icon_transport));
         details-enabled: 0;
