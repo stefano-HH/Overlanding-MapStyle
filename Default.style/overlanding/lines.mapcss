@@ -254,44 +254,33 @@ line {
     [railway] {
         |z9-[railway=rail] {
             color: @color_railway;
-            width: 3pt;
+            width: eval( zlinear(10, 2, 2, 2, 2, 2.5pt,3.5pt,4.5pt ) );
+            dashes-width: eval( zlinear(10, 1, 1, 1, 1.3pt,2pt,3pt ) );
+            dashes:12,12;
             dashes-color: @color_railway_dashes;
-            linecap: none;
-            width: eval( zlinear(15, 4pt,6pt) );
-            fill-image: "railway.svg";
-            dashes-width: none;
-        }
-
-        |z15-[railway=tram] {
-            width: eval( zlinear(14, 2pt,3pt,4pt ) );
-            color: @color_tram;
-            dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
-            dashes-color: @color_railway_dashes;
-            dashes:8,8;
             casing-width: 1pt;
-            casing-color: @color_railway_dashes;
+            casing-color: @color_railway_casing;
+            fill-image: none;
         }
 
-        |z15-[railway=subway] {
-            width: eval( zlinear(14, 2pt,3pt,4pt ) );
+        |z15-(
+            [railway=subway],
+            [railway=tram],
+            [railway=light_rail],
+            [railway=funicular],
+            [railway=narrow_gauge]
+         ) {
             color: @color_subway;
-            dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
+            width: eval( zlinear(15, 2.5pt,3.5pt,4.5pt ) );
+            dashes-width: eval( zlinear(15, 1.3pt,2pt,3pt ) );
             dashes-color: @color_railway_dashes;
-            dashes:8,8;
+            dashes:12,12;
             casing-width: 1pt;
-            casing-color: @color_railway_dashes;
-        }
+            casing-color: @color_railway_casing;
 
-        |z14-[railway=light_rail],
-        |z15-[railway=funicular],
-        |z14-[railway=narrow_gauge] {
-            width: eval( zlinear(14, 2pt,3pt,4pt ) );
-            color: @color_subway;
-            dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
-            dashes-color: @color_railway_dashes;
-            dashes:8,8;
-            casing-width: 1pt;
-            casing-color: @color_railway_dashes;
+            [railway=tram] {
+                color: @color_tram;
+            }
         }
 
         |z15-( [layer<0], [tunnel] ) {

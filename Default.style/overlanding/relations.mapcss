@@ -7,7 +7,7 @@ relation[type=route] {
     }
 }
 
-relation[route=subway], [railway=light_rail] {
+relation[route=subway], [railway=light_rail], [railway=tram] {
     // Draw metro lines with their relation colour when available.
     line|z13- {
         color: eval(any(colorTransform(relationTag('colour'))));

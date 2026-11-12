@@ -225,7 +225,8 @@
 
 // Railway
 @color_railway: #7C8299;
-@color_railway_dashes: #7C8299;
+@color_railway_dashes: #fdfbfbb9;
+@color_railway_casing: #868787;
 @color_railroad_tunnel: #333;
 @color_railway_area: #E6F8E0;
 

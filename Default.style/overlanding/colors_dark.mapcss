@@ -223,11 +223,14 @@
 @color_ferry_route: #2A80C4;
 
 // Railway
-@color_railway: #7F7F7F;
-@color_railway_dashes: #7F7F7F;
-@color_railroad_tunnel: #000;
+@color_railway: #5e6374;
+@color_railway_dashes: #ddddddae;
+@color_railway_casing: #5e6374;
+@color_railroad_tunnel: #333;
+@color_railway_area: #a3b09f;
 
-@color_railway_area: #E6F8E0;
+@color_tram: #922513;
+@color_subway: #356DAC;
 
 @color_tram: #922513;
 @color_subway: #356DAC;
