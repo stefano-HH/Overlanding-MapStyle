@@ -21,7 +21,7 @@
 @color_downloaded_map_stroke: #6F00FF;
 
 // Water
-@color_oceanwater: #BDD5EC;
+@color_oceanwater: #63ABF7; //#BDD5EC;
 @color_water: #63ABF7;
 @color_water_text: #2360A7;
 @color_water_stroke: white;

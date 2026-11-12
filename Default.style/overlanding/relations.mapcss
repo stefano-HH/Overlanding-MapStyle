@@ -1,0 +1,15 @@
+
+relation[type=route] {
+    relation[route=ferry] {
+        line|z9- {
+            dashes-color: @color_ferry_route;
+        }
+    }
+}
+
+relation[route=subway], [railway=light_rail] {
+    // Draw metro lines with their relation colour when available.
+    line|z13- {
+        color: eval(any(colorTransform(relationTag('colour'))));
+    }
+}

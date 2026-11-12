@@ -35,6 +35,7 @@
 @import "overlanding/if-sport.mapcss";
 
 @import "overlanding/points.mapcss";
+@import "overlanding/relations.mapcss";
 
 @import "overlanding/brands.mapcss";
 

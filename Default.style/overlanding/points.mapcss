@@ -445,7 +445,6 @@ node,area  {
             icon-tint: @color_icon_fuel;
             icon-scale: @icon_small;
             text-priority: 100;
-            z-index: 10;
 
             |z14-{
                 text: eval(locTag('name'));

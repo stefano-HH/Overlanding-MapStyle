@@ -249,17 +249,6 @@ line {
         }
     }
 
-
-    relation[route=subway], [railway=light_rail] {
-        // Draw metro lines with their relation colour when available.
-        line|z13- {
-            layer: 6;
-            width: 4pt;
-            color: eval(any(colorTransform(relationTag('colour'))));
-            linecap: round;
-        }
-    }
-
     // Railway -------------- //
 
     [railway] {
@@ -296,10 +285,13 @@ line {
         |z14-[railway=light_rail],
         |z15-[railway=funicular],
         |z14-[railway=narrow_gauge] {
-            dashes-width: 1pt;
+            width: eval( zlinear(14, 2pt,3pt,4pt ) );
+            color: @color_subway;
+            dashes-width: eval( zlinear(14, 1.3pt,2pt,3pt ) );
             dashes-color: @color_railway_dashes;
-            dashes:2,2;
-            z-index: 1;
+            dashes:8,8;
+            casing-width: 1pt;
+            casing-color: @color_railway_dashes;
         }
 
         |z15-( [layer<0], [tunnel] ) {
@@ -313,12 +305,15 @@ line {
 
    // Waterway -------------- //
 
+    |z9-[route=ferry] {
+        dashes-color: @color_ferry_route;
+    }
+
     |z10-{
         [waterway=river] {
             [!layer],[layer>=0] {
                     width: eval( zlinear( 10, 2px,2pt,2.5pt,3pt,4pt,4.5pt,5pt ) );
                     color: @color_water;
-                    z-index: -20;
 
                         }
         }
@@ -339,7 +334,6 @@ line {
             [waterway=ditch] {
                 width: eval( zlinear( 13, 2pt, 2.5pt, 3pt ));
                 color: @color_water;
-                z-index: -20;
             }
         }
     }
