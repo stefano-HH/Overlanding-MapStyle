@@ -229,8 +229,9 @@
 @color_railroad_tunnel: #333;
 @color_railway_area: #a3b09f;
 
-@color_tram: #922513;
-@color_subway: #356DAC;
+@color_railway_disused: #3f414d;
+@color_railway_dashes_disused: #fdfbfb5a;
+@color_railway_casing_disused: #5b5c5c;
 
 @color_tram: #922513;
 @color_subway: #356DAC;

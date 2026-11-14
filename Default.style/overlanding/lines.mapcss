@@ -252,7 +252,7 @@ line {
     // Railway -------------- //
 
     [railway] {
-        |z9-[railway=rail] {
+        |z9-[railway=rail], [railway=disused] {
             color: @color_railway;
             width: eval( zlinear(10, 2, 2, 2, 2, 2.5pt,3.5pt,4.5pt ) );
             dashes-width: eval( zlinear(10, 1, 1, 1, 1.3pt,2pt,3pt ) );
@@ -261,6 +261,12 @@ line {
             casing-width: 1pt;
             casing-color: @color_railway_casing;
             fill-image: none;
+
+            [railway=disused] {
+                color: @color_railway_disused;
+                dashes-color: @color_railway_dashes_disused;
+                casing-color: @color_railway_casing_disused;
+            }
         }
 
         |z15-(

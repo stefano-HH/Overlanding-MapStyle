@@ -230,6 +230,10 @@
 @color_railroad_tunnel: #333;
 @color_railway_area: #E6F8E0;
 
+@color_railway_disused: #989fbb;
+@color_railway_dashes_disused: #fdfbfb8e;
+@color_railway_casing_disused: #acaeae;
+
 @color_tram: #922513;
 @color_subway: #356DAC;
 
